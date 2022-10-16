@@ -2,7 +2,8 @@
 A python script for scrapping members from another Telegram group and adding them to your group
 
 Instruction for installation and operation:
-Step 1:
+
+Step 1: update linux
 
 apt update && apt upgrade
 
@@ -39,7 +40,8 @@ Then copy App Id, API Hash
 Now go back to Termux and type App Id and hit enter, then it will ask for API Hash, just copy and paste the API Hash and hit enter
 
 It will ask for your Phone number, just give your number (international format) and hit enter that's all your setup is ready
-=================================================
+
+================================================
 
 Step 6: Run scraper
 
