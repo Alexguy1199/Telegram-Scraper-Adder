@@ -45,7 +45,7 @@ It will ask for your Phone number, just give your number (international format) 
 
 <> Step 6: Run scraper
 
-python scraper.py
+python Scraper.py
 
 And select any group by typing the number
 
