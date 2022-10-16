@@ -124,7 +124,7 @@ for user in users:
         print('Flood waited for', e.seconds)
         time.sleep(e.seconds)
     except UserBannedInChannelError:
-        print(“Banned from sending messages in supergroups”)
+        print("Banned from sending messages in supergroups")
         quit(1)
     except UserPrivacyRestrictedError:
         print("The user's privacy settings do not allow you to do this. Skipping.")
