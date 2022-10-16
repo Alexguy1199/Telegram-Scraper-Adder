@@ -3,24 +3,24 @@ A python script for scrapping members from another Telegram group and adding the
 
 Instruction for installation and operation:
 
-Step 1: update linux
+<> Step 1: update linux
 
 apt update && apt upgrade
 
-Step 2:  install python3 and git
+<> Step 2:  install python3 and git
 
 apt install python git
 
-Step 3:  install Telegram-Scraper-Adder
+<> Step 3:  install Telegram-Scraper-Adder
 
 git clone https://github.com/Alexguy1199/Telegram-Scraper-Adder
 
-Step 4: Setup the requirements
+<> Step 4: Setup the requirements
 
 cd Telegram-Scraper-Adder
 chmod +x Setup.py
 
-Step 5: Setup TG accounts for scraping and adding
+<> Step 5: Setup TG accounts for scraping and adding
 
 python Setup.py -c
 
@@ -43,7 +43,7 @@ It will ask for your Phone number, just give your number (international format) 
 
 ================================================
 
-Step 6: Run scraper
+<> Step 6: Run scraper
 
 python scraper.py
 
@@ -51,7 +51,7 @@ And select any group by typing the number
 
 It will Scrap all the members of the group and will be saved as members.csv
 
-Step 7: Run Adder
+<> Step 7: Run Adder
 
 python Adder.py members.csv
 
