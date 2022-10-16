@@ -102,7 +102,7 @@ n = 0
 for user in users:
     n += 1
     if n % 25 == 0:
-        sleep(7500)
+        time.sleep(7500)
     try:
         print("Adding {}".format(user['id']))
         if mode == 1:
