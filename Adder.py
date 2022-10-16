@@ -1,7 +1,7 @@
 from telethon.sync import TelegramClient
 from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty, InputPeerChannel, InputPeerUser
-from telethon.errors.rpcerrorlist import PeerFloodError, UserPrivacyRestrictedError
+from telethon.errors.rpcerrorlist import PeerFloodError, FloodWaitError, UserBannedInChannelError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 import configparser
 import os
@@ -101,8 +101,8 @@ n = 0
 
 for user in users:
     n += 1
-    if n % 80 == 0:
-        sleep(60)
+    if n % 25 == 0:
+        sleep(7500)
     try:
         print("Adding {}".format(user['id']))
         if mode == 1:
@@ -114,12 +114,18 @@ for user in users:
         else:
             sys.exit("Invalid Mode Selected. Please Try Again.")
         client(InviteToChannelRequest(target_group_entity, [user_to_add]))
-        print("Waiting for 60-180 Seconds...")
-        time.sleep(random.randrange(0, 5))
+        print("Waiting for 120 Seconds...")
+        time.sleep(120)
     except PeerFloodError:
         print("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
-        print("Waiting {} seconds".format(SLEEP_TIME_2))
-        time.sleep(SLEEP_TIME_2)
+        print("Waiting {} seconds".format(7500))
+        time.sleep(7500)
+    except FloodWaitError as e:
+        print('Flood waited for', e.seconds)
+        time.sleep(e.seconds)
+    except UserBannedInChannelError:
+        print(“Banned from sending messages in supergroups”)
+        quit(1)
     except UserPrivacyRestrictedError:
         print("The user's privacy settings do not allow you to do this. Skipping.")
         print("Waiting for 5 Seconds...")
