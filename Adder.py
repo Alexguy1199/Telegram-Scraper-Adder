@@ -102,6 +102,7 @@ n = 0
 for user in users:
     n += 1
     if n % 25 == 0:
+        print("Sleeping for 2 hours.")
         time.sleep(7500)
     try:
         print("Adding {}".format(user['id']))
